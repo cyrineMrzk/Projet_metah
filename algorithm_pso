@@ -1,0 +1,31 @@
+Initialize all particles 
+parameters :
+random (r1, r2)
+w : A constant value, typically between 0.4 and 0.9.
+ω=0.7 (common default value).
+c1 , c2 : ex : 1,5 ---- 1,5-2,0
+pbest :table ,  best find position by each particales itiially current position
+gbest : best current position 
+
+
+
+2  Evaluate fitness for all particles 
+ table fitness 
+3 while ( stopping condition == false )
+
+stopping condition : nombre d'iterations
+
+
+4   for each particle 
+5     if fitness(p) better than pbest(p) 
+6    pbest = fitness 
+7   end for 
+
+8    gbest = the best pbest
+
+9   for each particle 
+10      update velocity using formule V
+11      update position using formule X
+
+12   end for 
+13      end while
