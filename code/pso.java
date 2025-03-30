@@ -70,14 +70,13 @@ class PSO_MCP {
          }
       
     }
-    printSolution();
+      printSolution();
      return particules; 
     }
 
 
 
     public void printSolution() {
-       
     }
 }
 
