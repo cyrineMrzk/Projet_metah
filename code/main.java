@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class Main {
         int numParticles = 30;   // Number of particles
         int maxIterations = 100; // Maximum iterations for PSO
         int numRuns = 5;         // Number of runs for each benchmark
-      
+        
         // List of benchmark files to test (you can customize this)
         String[] benchmarkFiles = {
             "scp41.txt",
@@ -40,13 +42,13 @@ public class Main {
                 // Parse the benchmark file
                 SCPInstance instance = parseSCPFile(benchmarkDir + "/" + fileName);
                 
-                // Calculate k (number of subsets to select)
-                int k = (int)(instance.numSubsets / 25);
+                // Calculate k (number of subsets to select) - MODIFIED: now using m/25
+                int k = instance.m / 25;
                 if (k < 1) k = 1;
                 
                 // Print instance information
-                System.out.println("Number of rows (elements): " + instance.numElements);
-                System.out.println("Number of columns (subsets): " + instance.numSubsets);
+                System.out.println("Number of rows (elements): " + instance.n);
+                System.out.println("Number of columns (subsets): " + instance.m);
                 System.out.println("Number of subsets to select (k): " + k);
                 
                 // Variables for averaging results
@@ -58,14 +60,14 @@ public class Main {
                     System.out.println("\nRun " + run + "/" + numRuns);
                     
                     // Create PSO_MCP instance
-                    PSO_MCP pso = new PSO_MCP(instance.subsets, instance.numElements);
+                    PSO_MCP pso = new PSO_MCP(instance.subsets, instance.n);
                     pso.setMaxIterations(maxIterations);
                     
                     // Start timer
                     long startTime = System.currentTimeMillis();
                     
                     // Run the PSO algorithm
-                    Particle[] result = pso.solution(numParticles, k, instance.numSubsets);
+                    Particle[] result = pso.solution(numParticles, k, instance.m);
                     
                     // End timer
                     long endTime = System.currentTimeMillis();
@@ -85,7 +87,7 @@ public class Main {
                     
                     // Output run results
                     System.out.println("Run " + run + " time: " + runTime + " ms, coverage: " + 
-                                      bestFitness + "/" + instance.numElements);
+                                      bestFitness + "/" + instance.n);
                 }
                 
                 // Calculate and display averages
@@ -94,12 +96,12 @@ public class Main {
                 
                 System.out.println("\nAverage Results for " + fileName + ":");
                 System.out.println("Average execution time: " + avgTime + " ms");
-                System.out.println("Average coverage: " + avgCoverage + "/" + instance.numElements + 
-                                  " (" + (avgCoverage/instance.numElements*100) + "%)");
+                System.out.println("Average coverage: " + avgCoverage + "/" + instance.n + 
+                                  " (" + (avgCoverage/instance.n*100) + "%)");
                 
                 // Add to CSV-style summary
-                System.out.println(fileName + "," + instance.numElements + "," + 
-                                  instance.numSubsets + "," + k + "," + 
+                System.out.println(fileName + "," + instance.n + "," + 
+                                  instance.m + "," + k + "," + 
                                   avgCoverage + "," + avgTime);
                 
             } catch (IOException e) {
@@ -107,105 +109,94 @@ public class Main {
             }
         }
     }
-    
-/**
- * Parse a Set Covering Problem benchmark file
+    /**
+ * Parse a Set Covering Problem benchmark file in JSON-like format
  */
 private static SCPInstance parseSCPFile(String filePath) throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        // Read the entire file content
+        StringBuilder content = new StringBuilder();
         String line;
-        
-        // Read the first line: number of rows (elements) and columns (subsets)
-        line = reader.readLine().trim();
-        String[] firstLineTokens = line.split("\\s+");
-        int numElements = Integer.parseInt(firstLineTokens[0]);
-        int numSubsets = Integer.parseInt(firstLineTokens[1]);
-        
-        System.out.println("Parsing file with " + numElements + " elements and " + numSubsets + " subsets");
-        
-        // Initialize the subsets matrix
-        boolean[][] subsets = new boolean[numSubsets][numElements];
-        
-        // Skip the cost line(s)
-        // The costs might span multiple lines, so we need to count how many numbers we've read
-        int costsRead = 0;
-        while (costsRead < numSubsets) {
-            line = reader.readLine();
-            if (line == null) break;
-            
-            String[] tokens = line.trim().split("\\s+");
-            for (String token : tokens) {
-                if (!token.isEmpty()) {
-                    costsRead++;
-                    if (costsRead >= numSubsets) break;
-                }
-            }
+        while ((line = reader.readLine()) != null) {
+            content.append(line).append(" ");
         }
         
-        // Now read the subset information
-        // First, read how many elements are in each subset
-        int[] elementsInSubset = new int[numSubsets];
-        int subsetsRead = 0;
+        // Parse the content as a list of lists
+        String fileContent = content.toString();
         
-        while (subsetsRead < numSubsets) {
-            line = reader.readLine();
-            if (line == null) break;
-            
-            String[] tokens = line.trim().split("\\s+");
-            for (String token : tokens) {
-                if (!token.isEmpty()) {
-                    elementsInSubset[subsetsRead] = Integer.parseInt(token);
-                    subsetsRead++;
-                    if (subsetsRead >= numSubsets) break;
-                }
-            }
+        // Split the content by "], [" to get individual subset lists
+        String[] subsetStrings = fileContent.split("\\],\\s*\\[");
+        
+        // Clean up the first and last subset strings
+        if (subsetStrings.length > 0) {
+            subsetStrings[0] = subsetStrings[0].replaceFirst("^\\s*\\[", "");
+            int lastIndex = subsetStrings.length - 1;
+            subsetStrings[lastIndex] = subsetStrings[lastIndex].replaceFirst("\\]\\s*$", "");
         }
         
-        // Now read which elements are in each subset
-        for (int i = 0; i < numSubsets; i++) {
-            int elementsToRead = elementsInSubset[i];
-            int elementsRead = 0;
-            
-            while (elementsRead < elementsToRead) {
-                line = reader.readLine();
-                if (line == null) break;
-                
-                String[] tokens = line.trim().split("\\s+");
-                for (String token : tokens) {
-                    if (!token.isEmpty()) {
-                        try {
-                            int element = Integer.parseInt(token);
-                            // Convert 1-based index to 0-based
-                            if (element > 0 && element <= numElements) {
-                                subsets[i][element - 1] = true;
-                            }
-                            elementsRead++;
-                            if (elementsRead >= elementsToRead) break;
-                        } catch (NumberFormatException e) {
-                            // Skip invalid tokens
-                            System.out.println("Warning: Skipping invalid token: " + token);
+        // Count the number of subsets (m)
+        int m = subsetStrings.length;
+        
+        // Find the maximum element number to determine n
+        int maxElement = 0;
+        List<List<Integer>> parsedSubsets = new ArrayList<>();
+        
+        for (String subsetString : subsetStrings) {
+            List<Integer> subset = new ArrayList<>();
+            // Split by commas and parse each number
+            String[] elements = subsetString.split(",");
+            for (String element : elements) {
+                // Clean and parse the element
+                element = element.trim();
+                if (!element.isEmpty()) {
+                    try {
+                        int elementNum = Integer.parseInt(element);
+                        subset.add(elementNum);
+                        if (elementNum > maxElement) {
+                            maxElement = elementNum;
                         }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Warning: Skipping invalid element: " + element);
                     }
                 }
             }
+            parsedSubsets.add(subset);
         }
         
-        return new SCPInstance(numElements, numSubsets, subsets);
+        // The number of elements (n) is the maximum element number
+        int n = maxElement;
+        
+        System.out.println("Parsed file with " + n + " elements and " + m + " subsets");
+        
+        // Create the boolean matrix representation
+        boolean[][] subsets = new boolean[m][n];
+        
+        // Fill the matrix
+        for (int i = 0; i < parsedSubsets.size(); i++) {
+            List<Integer> subset = parsedSubsets.get(i);
+            for (int element : subset) {
+                // Convert to 0-based index
+                if (element > 0 && element <= n) {
+                    subsets[i][element - 1] = true;
+                }
+            }
+        }
+        
+        return new SCPInstance(n, m, subsets);
     }
 }
-
     
     /**
      * Class to hold a Set Covering Problem instance
      */
     static class SCPInstance {
-        int numElements;
-        int numSubsets;
+        int n;  // Number of elements
+        int m;  // Number of subsets
         boolean[][] subsets;
         
-        public SCPInstance(int numElements, int numSubsets, boolean[][] subsets) {
-            this.numElements = numElements;
-            this.numSubsets = numSubsets;
+        public SCPInstance(int n, int m, boolean[][] subsets) {
+            this.n = n;
+            this.m = m;
             this.subsets = subsets;
         }
     }

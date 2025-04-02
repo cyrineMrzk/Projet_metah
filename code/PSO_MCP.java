@@ -132,31 +132,31 @@ public class PSO_MCP {
         }
     }
     
-    // Ensure exactly k subsets are selected
-    private void enforceKSubsets(Particle p, int k) {
-        int selected = 0;
-        for (boolean b : p.position) {
-            if (b) selected++;
-        }
+    // // Ensure exactly k subsets are selected
+    // private void enforceKSubsets(Particle p, int k) {
+    //     int selected = 0;
+    //     for (boolean b : p.position) {
+    //         if (b) selected++;
+    //     }
         
-        // If too many subsets are selected, randomly deselect some
-        while (selected > k) {
-            int index = rand.nextInt(p.position.length);
-            if (p.position[index]) {
-                p.position[index] = false;
-                selected--;
-            }
-        }
+    //     // If too many subsets are selected, randomly deselect some
+    //     while (selected > k) {
+    //         int index = rand.nextInt(p.position.length);
+    //         if (p.position[index]) {
+    //             p.position[index] = false;
+    //             selected--;
+    //         }
+    //     }
         
-        // If too few subsets are selected, randomly select more
-        while (selected < k) {
-            int index = rand.nextInt(p.position.length);
-            if (!p.position[index]) {
-                p.position[index] = true;
-                selected++;
-            }
-        }
-    }
+    //     // If too few subsets are selected, randomly select more
+    //     while (selected < k) {
+    //         int index = rand.nextInt(p.position.length);
+    //         if (!p.position[index]) {
+    //             p.position[index] = true;
+    //             selected++;
+    //         }
+    //     }
+    // }
     
     // Main PSO algorithm that matches your Main class's expected interface
     public Particle[] solution(int numParticles, int k, int numSubsets) {
