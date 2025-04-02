@@ -91,7 +91,6 @@ class MCP {
         System.out.println();
         System.out.println("Total covered: " + covered.cardinality() + "/" + instance.n);
     }
-    
     public static BitSet[] MCPDFS(MCPinstant instance) {
         // Initialize best solution and current solution with all sets included
         BitSet[] bestSolution = new BitSet[instance.m];
@@ -106,8 +105,7 @@ class MCP {
         Stack<Etat> stack = new Stack<>();
         stack.push(new Etat(currentSolution, 0));
         
-        int bestValue = 0;
-        int selectedSets = instance.m;
+        int minSetsKept = instance.m; // Start with all sets kept
         
         while (!stack.isEmpty()) {
             Etat etat = stack.pop();
@@ -116,27 +114,25 @@ class MCP {
             
             // If we've tried removing all sets
             if (k >= instance.m) {
-                // Count how many sets we've removed
-                int removedSets = 0;
+                // Count how many sets we've kept
+                int keptSets = 0;
                 for (int i = 0; i < instance.m; i++) {
-                    if (currentSolution[i].isEmpty()) {
-                        removedSets++;
+                    if (!currentSolution[i].isEmpty()) {
+                        keptSets++;
                     }
                 }
                 
-                if (removedSets > bestValue) {
+                if (keptSets < minSetsKept) {
                     // Check if we still have full coverage
                     int coverage = evaluateEtat(currentSolution, instance);
                     if (coverage == instance.n) {
-                        bestValue = removedSets;
-                        System.out.println("New best: removed sets = " + bestValue);
+                        minSetsKept = keptSets;
+                        System.out.println("New best: kept sets = " + minSetsKept);
                         
                         // Deep copy of the solution
                         for (int i = 0; i < instance.m; i++) {
                             bestSolution[i] = (BitSet) currentSolution[i].clone();
                         }
-                        
-                        selectedSets = instance.m - removedSets;
                     }
                 }
             } else {
@@ -164,10 +160,10 @@ class MCP {
             }
         }
         
-        System.out.println("Valeur maximale du k avec le DFS: " + bestValue + 
-                          " avec le nbr de sous ensemble : " + selectedSets);
+        System.out.println("Minimum number of subsets needed: " + minSetsKept);
         return bestSolution;
     }
+    
     
     public static void main(String[] args) {
         // Test cases with different sizes
