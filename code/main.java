@@ -26,22 +26,28 @@ class particule {
     }
 
     // Calculate coverage for the entire position array
-    int calculateCoverage(boolean[] pos) {
-        // This is a placeholder - in a real implementation, 
-        // this would calculate how many elements are covered by the selected subsets
-        int coverage = 0;
-        for (boolean selected : pos) {
-            if (selected) {
-                coverage++;
+   int calculateCoverage(boolean[] pos, boolean[][] subsets, int numElements) {
+    boolean[] covered = new boolean[numElements];
+    int coverage = 0;
+
+    for (int i = 0; i < pos.length; i++) {
+        if (pos[i]) {  // Si le sous-ensemble est sélectionné
+            for (int j = 0; j < numElements; j++) {
+                if (subsets[i][j] && !covered[j]) {  // Si l'élément est couvert et non encore compté
+                    covered[j] = true;
+                    coverage++;
+                }
             }
         }
-        return coverage;
     }
+    return coverage;
+}
 
     
     // Update position based on velocity
-    void updatePosition(int index) {
-        position[index] = position[index] || (V[index] > 0);
+      void updatePosition(int index) {
+       position[index] = Math.random() < sigmoid(V[index]);
+
     }
 }
 class solution {
