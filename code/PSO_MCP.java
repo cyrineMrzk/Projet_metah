@@ -1,3 +1,4 @@
+
 import java.util.Random;
 
 class Particle {
@@ -75,54 +76,20 @@ class Particle {
 }
 
 public class PSO_MCP {
+    // Problem-specific data
     private boolean[][] subsets;     // Each subset contains a set of elements
     private int numElements;         // Total number of unique elements
-    private int numSubsets;          // Number of available subsets
-    private int k;                   // Number of subsets to select
-    private int numParticles;        // Number of particles in the swarm
-    private int maxIterations;       // Maximum number of iterations
     
     // PSO parameters
     private double w = 0.729;        // Inertia weight
     private double c1 = 1.49445;     // Cognitive coefficient
     private double c2 = 1.49445;     // Social coefficient
+    private int maxIterations = 50;  // Default max iterations
+    private Random rand = new Random();
     
-    private Particle[] swarm;        // The particle swarm
-    private int gBest;               // Global best fitness
-    private boolean[] gBestPosition; // Global best position
-    private Random rand;             // Random number generator
-    
-    public PSO_MCP(boolean[][] subsets, int numElements, int k, int numParticles, int maxIterations) {
+    public PSO_MCP(boolean[][] subsets, int numElements) {
         this.subsets = subsets;
         this.numElements = numElements;
-        this.numSubsets = subsets.length;
-        this.k = k;
-        this.numParticles = numParticles;
-        this.maxIterations = maxIterations;
-        this.rand = new Random();
-        
-        // Initialize swarm
-        swarm = new Particle[numParticles];
-        gBestPosition = new boolean[numSubsets];
-        gBest = 0;
-        
-        initializeSwarm();
-    }
-    
-    private void initializeSwarm() {
-        for (int i = 0; i < numParticles; i++) {
-            swarm[i] = new Particle(numSubsets, k, rand);
-            
-            // Evaluate initial fitness
-            swarm[i].fitness = evaluateFitness(swarm[i].position);
-            swarm[i].pBest = swarm[i].fitness;
-            
-            // Update global best if needed
-            if (swarm[i].fitness > gBest) {
-                gBest = swarm[i].fitness;
-                System.arraycopy(swarm[i].position, 0, gBestPosition, 0, numSubsets);
-            }
-        }
     }
     
     // Evaluate fitness: count how many unique elements are covered by selected subsets
@@ -130,7 +97,7 @@ public class PSO_MCP {
         boolean[] covered = new boolean[numElements];
         int count = 0;
         
-        for (int i = 0; i < numSubsets; i++) {
+        for (int i = 0; i < position.length; i++) {
             if (position[i]) {
                 for (int j = 0; j < numElements; j++) {
                     if (subsets[i][j] && !covered[j]) {
@@ -145,8 +112,8 @@ public class PSO_MCP {
     }
     
     // Update velocity for a particle
-    private void updateVelocity(Particle p) {
-        for (int i = 0; i < numSubsets; i++) {
+    private void updateVelocity(Particle p, boolean[] gBestPosition) {
+        for (int i = 0; i < p.position.length; i++) {
             double r1 = rand.nextDouble();
             double r2 = rand.nextDouble();
             
@@ -165,13 +132,61 @@ public class PSO_MCP {
         }
     }
     
-    public void run() {
+    // Ensure exactly k subsets are selected
+    private void enforceKSubsets(Particle p, int k) {
+        int selected = 0;
+        for (boolean b : p.position) {
+            if (b) selected++;
+        }
+        
+        // If too many subsets are selected, randomly deselect some
+        while (selected > k) {
+            int index = rand.nextInt(p.position.length);
+            if (p.position[index]) {
+                p.position[index] = false;
+                selected--;
+            }
+        }
+        
+        // If too few subsets are selected, randomly select more
+        while (selected < k) {
+            int index = rand.nextInt(p.position.length);
+            if (!p.position[index]) {
+                p.position[index] = true;
+                selected++;
+            }
+        }
+    }
+    
+    // Main PSO algorithm that matches your Main class's expected interface
+    public Particle[] solution(int numParticles, int k, int numSubsets) {
         System.out.println("Starting PSO with " + numParticles + " particles, k=" + k + ", iterations=" + maxIterations);
         
+        // Initialize particles
+        Particle[] particles = new Particle[numParticles];
+        for (int i = 0; i < numParticles; i++) {
+            particles[i] = new Particle(numSubsets, k, rand);
+            particles[i].fitness = evaluateFitness(particles[i].position);
+            particles[i].pBest = particles[i].fitness;
+        }
+        
+        // Initialize global best
+        int gBest = 0;
+        boolean[] gBestPosition = new boolean[numSubsets];
+        
+        // Find initial global best
+        for (Particle p : particles) {
+            if (p.fitness > gBest) {
+                gBest = p.fitness;
+                System.arraycopy(p.position, 0, gBestPosition, 0, numSubsets);
+            }
+        }
+        
+        // Main PSO loop
         for (int iter = 0; iter < maxIterations; iter++) {
-            for (Particle p : swarm) {
+            for (Particle p : particles) {
                 // Update velocity
-                updateVelocity(p);
+                updateVelocity(p, gBestPosition);
                 
                 // Update position (ensuring exactly k subsets are selected)
                 p.updatePosition(rand, k);
@@ -194,25 +209,34 @@ public class PSO_MCP {
             }
         }
         
-        printSolution();
+        printSolution(gBestPosition, gBest);
+        return particles;
     }
     
-    public void printSolution() {
+    // Set the maximum number of iterations
+    public void setMaxIterations(int maxIterations) {
+        this.maxIterations = maxIterations;
+    }
+    
+    // Print the solution
+    public void printSolution(boolean[] bestPosition, int bestFitness) {
         System.out.println("\nBest solution found:");
-        System.out.println("Coverage: " + gBest + "/" + numElements + " elements");
-        System.out.print("Selected subsets: ");
+        System.out.println("Coverage: " + bestFitness + "/" + numElements + " elements");
         
-        for (int i = 0; i < numSubsets; i++) {
-            if (gBestPosition[i]) {
-                System.out.print(i + " ");
+        System.out.print("Selected subsets: ");
+        int selectedCount = 0;
+        for (int i = 0; i < bestPosition.length; i++) {
+            if (bestPosition[i]) {
+                System.out.print((i+1) + " ");
+                selectedCount++;
             }
         }
-        System.out.println();
+        System.out.println("(" + selectedCount + " subsets)");
         
         // Print which elements are covered
         boolean[] covered = new boolean[numElements];
-        for (int i = 0; i < numSubsets; i++) {
-            if (gBestPosition[i]) {
+        for (int i = 0; i < bestPosition.length; i++) {
+            if (bestPosition[i]) {
                 for (int j = 0; j < numElements; j++) {
                     if (subsets[i][j]) {
                         covered[j] = true;
@@ -221,22 +245,11 @@ public class PSO_MCP {
             }
         }
         
-        System.out.print("Covered elements: ");
-        for (int j = 0; j < numElements; j++) {
-            if (covered[j]) {
-                System.out.print(j + " ");
-            }
+        int coveredCount = 0;
+        for (boolean b : covered) {
+            if (b) coveredCount++;
         }
-        System.out.println();
-    }
-    
-    // Getter for the best solution found
-    public boolean[] getBestSolution() {
-        return gBestPosition;
-    }
-    
-    // Getter for the best fitness found
-    public int getBestFitness() {
-        return gBest;
+        
+        System.out.println("Total elements covered: " + coveredCount + "/" + numElements);
     }
 }
