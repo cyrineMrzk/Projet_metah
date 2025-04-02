@@ -18,7 +18,7 @@ public class Main {
         
         // Configure testing parameters
         int numParticles = 30;   // Number of particles
-        int maxIterations = 100; // Maximum iterations for PSO
+        int maxIterations = 100000; // Maximum iterations for PSO
         int numRuns = 5;         // Number of runs for each benchmark
         
         // List of benchmark files to test (you can customize this)
