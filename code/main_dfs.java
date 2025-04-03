@@ -5,12 +5,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
-import java.util.Stack;
 
 public class main_dfs {
     public static void main(String[] args) {
         // Directory containing benchmark files
-        String benchmarkDir = "C:/Users/MECHERI INFORMATIQUE/Projet_metah/scp_benchmark";
+        String benchmarkDir = "scp_benchmark";
         File dir = new File(benchmarkDir);
         
         if (!dir.exists() || !dir.isDirectory()) {
@@ -19,7 +18,7 @@ public class main_dfs {
         }
         
         // Configure testing parameters
-        int numRuns = 5;         // Number of runs for each benchmark
+        int numRuns = 1;         // Number of runs for each benchmark
         
         // List of benchmark files to test
         String[] benchmarkFiles = {
