@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // Directory containing benchmark files
-        String benchmarkDir = "scp_benchmark";
+        String benchmarkDir = "C:/Users/MECHERI INFORMATIQUE/Projet_metah/scp_benchmark";
         File dir = new File(benchmarkDir);
         
         if (!dir.exists() || !dir.isDirectory()) {
@@ -24,10 +24,21 @@ public class Main {
         // List of benchmark files to test (you can customize this)
         String[] benchmarkFiles = {
             "scp41.txt",
-            "scp51.txt",
+            "scp42.txt",
+            "scp43.txt",
+            "scp44.txt",
+            "scp410.txt",
             "scpa1.txt",
+            "scpa2.txt",
+            "scpa3.txt", 
+            "scpa4.txt",
+            "scpa5.txt",  
             "scpb1.txt",
-            "scpc1.txt"
+            "scpb2.txt",
+            "scpb3.txt",
+            "scpc1.txt",
+            "scpc2.txt",
+            "scpc3.txt"
         };
         
         // Results summary
