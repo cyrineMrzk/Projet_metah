@@ -20,6 +20,11 @@ public class main_dfs {
         // Configure testing parameters
         int numRuns = 1;         // Number of runs for each benchmark
         
+        // Configure DFS parameters
+        long timeLimit = 60000;  // 60 seconds time limit
+        boolean useGreedyInitial = true;
+        boolean usePruning = true;
+        
         // List of benchmark files to test
         String[] benchmarkFiles = {
             "scp41.txt", "scp42.txt", "scp43.txt", "scp44.txt", "scp410.txt",
@@ -47,6 +52,8 @@ public class main_dfs {
                 System.out.println("Number of rows (elements): " + instance.n);
                 System.out.println("Number of columns (subsets): " + instance.m);
                 System.out.println("Number of subsets to select (k): " + k);
+                System.out.println("DFS parameters: timeLimit=" + timeLimit + "ms, useGreedyInitial=" + 
+                                 useGreedyInitial + ", usePruning=" + usePruning);
                 
                 // Variables for averaging results
                 long totalTime = 0;
@@ -59,8 +66,8 @@ public class main_dfs {
                     // Start timer
                     long startTime = System.currentTimeMillis();
                     
-                    // Run the DFS algorithm
-                    BitSet[] result = MCP.MCPDFS(instance, k);
+                    // Run the DFS algorithm with parameters
+                    BitSet[] result = DFS.MCPDFS(instance, k, timeLimit, useGreedyInitial, usePruning);
                     
                     // End timer
                     long endTime = System.currentTimeMillis();
