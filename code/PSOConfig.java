@@ -3,7 +3,7 @@
  */
 public class PSOConfig {
     // Problem parameters
-    public String benchmarkDir = "scp_benchmark";  // Changed to a relative path
+    public String benchmarkDir = "C:\\Users\\MECHERI INFORMATIQUE\\Projet_metah\\scp_benchmark";  // Changed to a relative path
     public String[] benchmarkFiles = {
         "scp41.txt", "scp42.txt", "scp43.txt", "scp44.txt", "scp410.txt",
         "scpa1.txt", "scpa2.txt", "scpa3.txt", "scpa4.txt", "scpa5.txt",
