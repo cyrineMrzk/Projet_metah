@@ -1,0 +1,506 @@
+Benchmark,Elements,Subsets,k,AvgCoverage,AvgTime(ms)
+
+=======================================================
+Testing benchmark file: scp41.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true
+
+Run 1/1
+New best: coverage = 998 with 8 sets
+New best: coverage = 999 with 8 sets
+New best: coverage = 1000 with 8 sets
+Explored 218878 nodes. Current best: 1000
+Explored 467489 nodes. Current best: 1000
+Explored 729841 nodes. Current best: 1000
+Explored 991524 nodes. Current best: 1000
+Explored 1253578 nodes. Current best: 1000
+Explored 1515531 nodes. Current best: 1000
+Explored 1773900 nodes. Current best: 1000
+Explored 2030811 nodes. Current best: 1000
+Explored 2290021 nodes. Current best: 1000
+Explored 2488071 nodes. Current best: 1000
+Explored 2660148 nodes. Current best: 1000
+Time limit reached. Stopping search after exploring 2771772 nodes.
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 60035 ms, coverage: 1000/1000
+
+Average Results for scp41.txt:
+Average execution time: 60035.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp41.txt,1000,200,8,1000.0,60035.0
+
+=======================================================
+Testing benchmark file: scp42.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 997 with 8 sets
+New best: coverage = 998 with 8 sets
+New best: coverage = 999 with 8 sets
+New best: coverage = 1000 with 8 sets
+Explored 109210 nodes. Current best: 1000
+Explored 225748 nodes. Current best: 1000
+Explored 338059 nodes. Current best: 1000
+Explored 450466 nodes. Current best: 1000
+Explored 561491 nodes. Current best: 1000
+Explored 675557 nodes. Current best: 1000
+Explored 790384 nodes. Current best: 1000
+Explored 902911 nodes. Current best: 1000
+Explored 1015123 nodes. Current best: 1000
+Explored 1127397 nodes. Current best: 1000
+Explored 1243178 nodes. Current best: 1000
+Time limit reached. Stopping search after exploring 1354530 nodes.
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 60006 ms, coverage: 1000/1000
+
+Average Results for scp42.txt:
+Average execution time: 60006.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp42.txt,1000,200,8,1000.0,60006.0
+
+=======================================================
+Testing benchmark file: scp43.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 997 with 8 sets
+New best: coverage = 998 with 8 sets
+New best: coverage = 999 with 8 sets
+New best: coverage = 1000 with 8 sets
+Explored 103920 nodes. Current best: 1000
+Explored 215915 nodes. Current best: 1000
+Explored 330183 nodes. Current best: 1000
+Explored 441178 nodes. Current best: 1000
+Explored 554949 nodes. Current best: 1000
+Explored 666235 nodes. Current best: 1000
+Explored 780344 nodes. Current best: 1000
+Explored 893213 nodes. Current best: 1000
+Explored 1005747 nodes. Current best: 1000
+Explored 1114249 nodes. Current best: 1000
+Explored 1228326 nodes. Current best: 1000
+Time limit reached. Stopping search after exploring 1342367 nodes.
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 60014 ms, coverage: 1000/1000
+
+Average Results for scp43.txt:
+Average execution time: 60014.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp43.txt,1000,200,8,1000.0,60014.0
+
+=======================================================
+Testing benchmark file: scp44.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 999 with 8 sets
+New best: coverage = 1000 with 8 sets
+Explored 82788 nodes. Current best: 1000
+Explored 175605 nodes. Current best: 1000
+Explored 274724 nodes. Current best: 1000
+Explored 385649 nodes. Current best: 1000
+Explored 493967 nodes. Current best: 1000
+Explored 606043 nodes. Current best: 1000
+Explored 721020 nodes. Current best: 1000
+Explored 832515 nodes. Current best: 1000
+Explored 944991 nodes. Current best: 1000
+Explored 1057739 nodes. Current best: 1000
+Explored 1170003 nodes. Current best: 1000
+Time limit reached. Stopping search after exploring 1284116 nodes.
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 60007 ms, coverage: 1000/1000
+
+Average Results for scp44.txt:
+Average execution time: 60007.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp44.txt,1000,200,8,1000.0,60007.0
+
+=======================================================
+Testing benchmark file: scp410.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 998 with 8 sets
+New best: coverage = 999 with 8 sets
+New best: coverage = 1000 with 8 sets
+Explored 92863 nodes. Current best: 1000
+Explored 206311 nodes. Current best: 1000
+Explored 320111 nodes. Current best: 1000
+Explored 434543 nodes. Current best: 1000
+Explored 549818 nodes. Current best: 1000
+Explored 662128 nodes. Current best: 1000
+Explored 775341 nodes. Current best: 1000
+Explored 885222 nodes. Current best: 1000
+Explored 999524 nodes. Current best: 1000
+Explored 1118567 nodes. Current best: 1000
+Explored 1231760 nodes. Current best: 1000
+Time limit reached. Stopping search after exploring 1351945 nodes.
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 60002 ms, coverage: 1000/1000
+
+Average Results for scp410.txt:
+Average execution time: 60002.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp410.txt,1000,200,8,1000.0,60002.0
+
+=======================================================
+Testing benchmark file: scpa1.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true
+
+Run 1/1
+New best: coverage = 3000 with 12 sets
+Explored 42182 nodes. Current best: 3000
+Explored 87925 nodes. Current best: 3000
+Explored 135613 nodes. Current best: 3000
+Explored 183310 nodes. Current best: 3000
+Explored 231987 nodes. Current best: 3000
+Explored 279927 nodes. Current best: 3000
+Explored 327834 nodes. Current best: 3000
+Explored 374403 nodes. Current best: 3000
+Explored 422597 nodes. Current best: 3000
+Explored 470273 nodes. Current best: 3000
+Explored 517754 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 560210 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60002 ms, coverage: 3000/3000
+
+Average Results for scpa1.txt:
+Average execution time: 60002.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa1.txt,3000,300,12,3000.0,60002.0
+
+=======================================================
+Testing benchmark file: scpa2.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 3000 with 12 sets
+Explored 48146 nodes. Current best: 3000
+Explored 95036 nodes. Current best: 3000
+Explored 143578 nodes. Current best: 3000
+Explored 191348 nodes. Current best: 3000
+Explored 238900 nodes. Current best: 3000
+Explored 286444 nodes. Current best: 3000
+Explored 334384 nodes. Current best: 3000
+Explored 381727 nodes. Current best: 3000
+Explored 430375 nodes. Current best: 3000
+Explored 478189 nodes. Current best: 3000
+Explored 525250 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 572455 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60003 ms, coverage: 3000/3000
+
+Average Results for scpa2.txt:
+Average execution time: 60003.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa2.txt,3000,300,12,3000.0,60003.0
+
+=======================================================
+Testing benchmark file: scpa3.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 3000 with 12 sets
+Explored 44776 nodes. Current best: 3000
+Explored 92493 nodes. Current best: 3000
+Explored 140227 nodes. Current best: 3000
+Explored 187120 nodes. Current best: 3000
+Explored 234377 nodes. Current best: 3000
+Explored 281735 nodes. Current best: 3000
+Explored 329534 nodes. Current best: 3000
+Explored 377854 nodes. Current best: 3000
+Explored 425328 nodes. Current best: 3000
+Explored 473248 nodes. Current best: 3000
+Explored 521211 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 568697 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60006 ms, coverage: 3000/3000
+
+Average Results for scpa3.txt:
+Average execution time: 60006.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa3.txt,3000,300,12,3000.0,60006.0
+
+=======================================================
+Testing benchmark file: scpa4.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 2999 with 12 sets
+New best: coverage = 3000 with 12 sets
+Explored 44203 nodes. Current best: 3000
+Explored 89430 nodes. Current best: 3000
+Explored 133303 nodes. Current best: 3000
+Explored 177336 nodes. Current best: 3000
+Explored 222820 nodes. Current best: 3000
+Explored 271122 nodes. Current best: 3000
+Explored 337775 nodes. Current best: 3000
+Explored 424004 nodes. Current best: 3000
+Explored 509484 nodes. Current best: 3000
+Explored 597524 nodes. Current best: 3000
+Explored 685346 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 772873 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60003 ms, coverage: 3000/3000
+
+Average Results for scpa4.txt:
+Average execution time: 60003.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa4.txt,3000,300,12,3000.0,60003.0
+
+=======================================================
+Testing benchmark file: scpa5.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 3000 with 12 sets
+Explored 86563 nodes. Current best: 3000
+Explored 175385 nodes. Current best: 3000
+Explored 264196 nodes. Current best: 3000
+Explored 352275 nodes. Current best: 3000
+Explored 440522 nodes. Current best: 3000
+Explored 529453 nodes. Current best: 3000
+Explored 617972 nodes. Current best: 3000
+Explored 706371 nodes. Current best: 3000
+Explored 794481 nodes. Current best: 3000
+Explored 882497 nodes. Current best: 3000
+Explored 970844 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 1057257 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60016 ms, coverage: 3000/3000
+
+Average Results for scpa5.txt:
+Average execution time: 60016.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa5.txt,3000,300,12,3000.0,60016.0
+
+=======================================================
+Testing benchmark file: scpb1.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 3000 with 12 sets
+Explored 84988 nodes. Current best: 3000
+Explored 173893 nodes. Current best: 3000
+Explored 262400 nodes. Current best: 3000
+Explored 350783 nodes. Current best: 3000
+Explored 439397 nodes. Current best: 3000
+Explored 527732 nodes. Current best: 3000
+Explored 616571 nodes. Current best: 3000
+Explored 704725 nodes. Current best: 3000
+Explored 793482 nodes. Current best: 3000
+Explored 881901 nodes. Current best: 3000
+Explored 971113 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 1040197 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60015 ms, coverage: 3000/3000
+
+Average Results for scpb1.txt:
+Average execution time: 60015.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpb1.txt,3000,300,12,3000.0,60015.0
+
+=======================================================
+Testing benchmark file: scpb2.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 3000 with 12 sets
+Explored 76826 nodes. Current best: 3000
+Explored 165376 nodes. Current best: 3000
+Explored 250539 nodes. Current best: 3000
+Explored 339242 nodes. Current best: 3000
+Explored 426594 nodes. Current best: 3000
+Explored 514328 nodes. Current best: 3000
+Explored 602973 nodes. Current best: 3000
+Explored 692229 nodes. Current best: 3000
+Explored 780657 nodes. Current best: 3000
+Explored 869947 nodes. Current best: 3000
+Explored 959352 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 1045060 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60012 ms, coverage: 3000/3000
+
+Average Results for scpb2.txt:
+Average execution time: 60012.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpb2.txt,3000,300,12,3000.0,60012.0
+
+=======================================================
+Testing benchmark file: scpb3.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+New best: coverage = 3000 with 12 sets
+Explored 83933 nodes. Current best: 3000
+Explored 170686 nodes. Current best: 3000
+Explored 256876 nodes. Current best: 3000
+Explored 345985 nodes. Current best: 3000
+Explored 435546 nodes. Current best: 3000
+Explored 524898 nodes. Current best: 3000
+Explored 608231 nodes. Current best: 3000
+Explored 691979 nodes. Current best: 3000
+Explored 772068 nodes. Current best: 3000
+Explored 860682 nodes. Current best: 3000
+Explored 942133 nodes. Current best: 3000
+Time limit reached. Stopping search after exploring 1013010 nodes.
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 60002 ms, coverage: 3000/3000
+
+Average Results for scpb3.txt:
+Average execution time: 60002.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpb3.txt,3000,300,12,3000.0,60002.0
+
+=======================================================
+Testing benchmark file: scpc1.txt
+=======================================================
+Parsed file with 4000 elements and 400 subsets
+Number of rows (elements): 4000
+Number of columns (subsets): 400
+Number of subsets to select (k): 16
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+Explored 45659 nodes. Current best: 0
+Explored 94675 nodes. Current best: 0
+Explored 144608 nodes. Current best: 0
+Explored 192823 nodes. Current best: 0
+Explored 234679 nodes. Current best: 0
+Explored 284414 nodes. Current best: 0
+Explored 334188 nodes. Current best: 0
+Explored 373319 nodes. Current best: 0
+Explored 404877 nodes. Current best: 0
+Explored 448851 nodes. Current best: 0
+Explored 498493 nodes. Current best: 0
+Time limit reached. Stopping search after exploring 547030 nodes.
+Maximum coverage with 16 subsets: 0/4000
+Run 1 time: 60003 ms, coverage: 0/4000
+
+Average Results for scpc1.txt:
+Average execution time: 60003.0 ms
+Average coverage: 0.0/4000 (0.0%)
+scpc1.txt,4000,400,16,0.0,60003.0
+
+=======================================================
+Testing benchmark file: scpc2.txt
+=======================================================
+Parsed file with 4000 elements and 400 subsets
+Number of rows (elements): 4000
+Number of columns (subsets): 400
+Number of subsets to select (k): 16
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+Explored 46595 nodes. Current best: 0
+Explored 95480 nodes. Current best: 0
+Explored 145810 nodes. Current best: 0
+Explored 195853 nodes. Current best: 0
+Explored 245886 nodes. Current best: 0
+Explored 295697 nodes. Current best: 0
+Explored 345929 nodes. Current best: 0
+Explored 396369 nodes. Current best: 0
+Explored 446601 nodes. Current best: 0
+Explored 496240 nodes. Current best: 0
+Explored 546466 nodes. Current best: 0
+Time limit reached. Stopping search after exploring 595343 nodes.
+Maximum coverage with 16 subsets: 0/4000
+Run 1 time: 60002 ms, coverage: 0/4000
+
+Average Results for scpc2.txt:
+Average execution time: 60002.0 ms
+Average coverage: 0.0/4000 (0.0%)
+scpc2.txt,4000,400,16,0.0,60002.0
+
+=======================================================
+Testing benchmark file: scpc3.txt
+=======================================================
+Parsed file with 4000 elements and 400 subsets
+Number of rows (elements): 4000
+Number of columns (subsets): 400
+Number of subsets to select (k): 16
+DFS parameters: timeLimit=60000ms, useGreedyInitial=false, usePruning=true   
+
+Run 1/1
+Explored 42084 nodes. Current best: 0
+Explored 70913 nodes. Current best: 0
+Explored 100495 nodes. Current best: 0
+Explored 130149 nodes. Current best: 0
+Explored 160313 nodes. Current best: 0
+Explored 189862 nodes. Current best: 0
+Explored 219650 nodes. Current best: 0
+Explored 248861 nodes. Current best: 0
+Explored 277069 nodes. Current best: 0
+Explored 310762 nodes. Current best: 0
+Explored 349857 nodes. Current best: 0
+Time limit reached. Stopping search after exploring 386872 nodes.
+Maximum coverage with 16 subsets: 0/4000
+Run 1 time: 60006 ms, coverage: 0/4000
+
+Average Results for scpc3.txt:
+Average execution time: 60006.0 ms
+Average coverage: 0.0/4000 (0.0%)
+scpc3.txt,4000,400,16,0.0,60006.0

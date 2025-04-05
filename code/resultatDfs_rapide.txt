@@ -1,0 +1,305 @@
+Benchmark,Elements,Subsets,k,AvgCoverage,AvgTime(ms)
+
+=======================================================
+Testing benchmark file: scp41.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true
+
+Run 1/1
+Initial greedy solution coverage: 1000
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 24 ms, coverage: 1000/1000
+
+Average Results for scp41.txt: 
+Average execution time: 24.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp41.txt,1000,200,8,1000.0,24.0
+
+=======================================================
+Testing benchmark file: scp42.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 1000
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 9 ms, coverage: 1000/1000
+
+Average Results for scp42.txt:
+Average execution time: 9.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp42.txt,1000,200,8,1000.0,9.0
+
+=======================================================
+Testing benchmark file: scp43.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 1000
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 3 ms, coverage: 1000/1000
+
+Average Results for scp43.txt:
+Average execution time: 3.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp43.txt,1000,200,8,1000.0,3.0
+
+=======================================================
+Testing benchmark file: scp44.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 1000
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 4 ms, coverage: 1000/1000
+
+Average Results for scp44.txt:
+Average execution time: 4.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp44.txt,1000,200,8,1000.0,4.0
+
+=======================================================
+Testing benchmark file: scp410.txt
+=======================================================
+Parsed file with 1000 elements and 200 subsets
+Number of rows (elements): 1000
+Number of columns (subsets): 200
+Number of subsets to select (k): 8
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 1000
+Maximum coverage with 8 subsets: 1000/1000
+Run 1 time: 1 ms, coverage: 1000/1000
+
+Average Results for scp410.txt:
+Average execution time: 1.0 ms
+Average coverage: 1000.0/1000 (100.0%)
+scp410.txt,1000,200,8,1000.0,1.0
+
+=======================================================
+Testing benchmark file: scpa1.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 12 ms, coverage: 3000/3000
+
+Average Results for scpa1.txt:
+Average execution time: 12.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa1.txt,3000,300,12,3000.0,12.0
+
+=======================================================
+Testing benchmark file: scpa2.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 7 ms, coverage: 3000/3000
+
+Average Results for scpa2.txt:
+Average execution time: 7.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa2.txt,3000,300,12,3000.0,7.0
+
+=======================================================
+Testing benchmark file: scpa3.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 2 ms, coverage: 3000/3000
+
+Average Results for scpa3.txt:
+Average execution time: 2.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa3.txt,3000,300,12,3000.0,2.0
+
+=======================================================
+Testing benchmark file: scpa4.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 4 ms, coverage: 3000/3000
+
+Average Results for scpa4.txt:
+Average execution time: 4.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa4.txt,3000,300,12,3000.0,4.0
+
+=======================================================
+Testing benchmark file: scpa5.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 8 ms, coverage: 3000/3000
+
+Average Results for scpa5.txt:
+Average execution time: 8.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpa5.txt,3000,300,12,3000.0,8.0
+
+=======================================================
+Testing benchmark file: scpb1.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 1 ms, coverage: 3000/3000
+
+Average Results for scpb1.txt:
+Average execution time: 1.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpb1.txt,3000,300,12,3000.0,1.0
+
+=======================================================
+Testing benchmark file: scpb2.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 5 ms, coverage: 3000/3000
+
+Average Results for scpb2.txt:
+Average execution time: 5.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpb2.txt,3000,300,12,3000.0,5.0
+
+=======================================================
+Testing benchmark file: scpb3.txt
+=======================================================
+Parsed file with 3000 elements and 300 subsets
+Number of rows (elements): 3000
+Number of columns (subsets): 300
+Number of subsets to select (k): 12
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 3000
+Maximum coverage with 12 subsets: 3000/3000
+Run 1 time: 2 ms, coverage: 3000/3000
+
+Average Results for scpb3.txt:
+Average execution time: 2.0 ms
+Average coverage: 3000.0/3000 (100.0%)
+scpb3.txt,3000,300,12,3000.0,2.0
+
+=======================================================
+Testing benchmark file: scpc1.txt
+=======================================================
+Parsed file with 4000 elements and 400 subsets
+Number of rows (elements): 4000
+Number of columns (subsets): 400
+Number of subsets to select (k): 16
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 4000
+Maximum coverage with 16 subsets: 4000/4000
+Run 1 time: 5 ms, coverage: 4000/4000
+
+Average Results for scpc1.txt:
+Average execution time: 5.0 ms
+Average coverage: 4000.0/4000 (100.0%)
+scpc1.txt,4000,400,16,4000.0,5.0
+
+=======================================================
+Testing benchmark file: scpc2.txt
+=======================================================
+Parsed file with 4000 elements and 400 subsets
+Number of rows (elements): 4000
+Number of columns (subsets): 400
+Number of subsets to select (k): 16
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 4000
+Maximum coverage with 16 subsets: 4000/4000
+Run 1 time: 5 ms, coverage: 4000/4000
+
+Average Results for scpc2.txt:
+Average execution time: 5.0 ms
+Average coverage: 4000.0/4000 (100.0%)
+scpc2.txt,4000,400,16,4000.0,5.0
+
+=======================================================
+Testing benchmark file: scpc3.txt
+=======================================================
+Parsed file with 4000 elements and 400 subsets
+Number of rows (elements): 4000
+Number of columns (subsets): 400
+Number of subsets to select (k): 16
+DFS parameters: timeLimit=60000ms, useGreedyInitial=true, usePruning=true    
+
+Run 1/1
+Initial greedy solution coverage: 4000
+Maximum coverage with 16 subsets: 4000/4000
+Run 1 time: 5 ms, coverage: 4000/4000
+
+Average Results for scpc3.txt:
+Average execution time: 5.0 ms
+Average coverage: 4000.0/4000 (100.0%)
+scpc3.txt,4000,400,16,4000.0,5.0
