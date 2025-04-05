@@ -19,7 +19,6 @@ public class main_dfs {
         
         // Configure testing parameters
         int numRuns = 1;         // Number of runs for each benchmark
-        
         // Configure DFS parameters
         long timeLimit = 60000;  // 60 seconds time limit
         boolean useGreedyInitial = true;
