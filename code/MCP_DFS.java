@@ -2,10 +2,10 @@ import java.util.Stack;
 import java.util.BitSet;
 
 class MCPinstant {
-    int n;
-    int m;
-    BitSet[] S;
-    BitSet U;
+  public  int n;
+  public  int m;
+  public  BitSet[] S;
+  public  BitSet U;
     
     public MCPinstant(int n, int m) {
         this.n = n;
@@ -26,9 +26,9 @@ class MCPinstant {
 }
 
 class Etat {
-    BitSet[] X;  // Array of BitSets
-    int k;       // Current depth in the search
-    int selectedCount; // Number of sets currently selected
+public BitSet[] X;  // Array of BitSets
+public int k;       // Current depth in the search
+public int selectedCount; // Number of sets currently selected
     
     public Etat(BitSet[] X, int k, int selectedCount) {
         // Deep copy of the BitSet array
@@ -42,7 +42,7 @@ class Etat {
 }
 
 class MCP {
-    MCPinstant instance;
+   public MCPinstant instance;
     
     public MCP(MCPinstant instance) {
         this.instance = instance;
